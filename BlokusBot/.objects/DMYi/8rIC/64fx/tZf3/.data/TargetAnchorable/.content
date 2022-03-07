@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://blokee.mattle.online/room/7gkenzh8rc44vJjjN" ContentHash="ZNKqBEoSK0qs7tOwMBFYgA" DesignTimeRectangle="60, 243, 72, 63" FriendlyName="'chrome.exe Blokee'" Guid="c5fc9bad-0bde-4c0d-97fe-e88539c68140" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0y6Hmh-BKeUOFq5WAXsoLGw</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="1e97ae8cb237ac77ad3179fcb5e4ec6e.png" xmlns="">0Wf9v0ZOHxUWYYqk5PXavdA</imageRef>
+</TargetAnchorable>

@@ -1,0 +1,14 @@
+﻿{
+  "Id": "Zli2NwF_DEa-vXNH_Qmzqg",
+  "Reference": "1YbQklEfkky4IapDFZzkZg/Zli2NwF_DEa-vXNH_Qmzqg",
+  "ParentRef": "1YbQklEfkky4IapDFZzkZg/64fxYLQackCFCec5H98uuQ",
+  "Name": "Click red close button",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2022-03-07T13:38:02.4437849Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.10.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-03-07T13:38:02.4437849Z"
+}

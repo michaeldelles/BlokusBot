@@ -1,0 +1,15 @@
+﻿{
+  "Id": "64fxYLQackCFCec5H98uuQ",
+  "Reference": "1YbQklEfkky4IapDFZzkZg/64fxYLQackCFCec5H98uuQ",
+  "ParentRef": "1YbQklEfkky4IapDFZzkZg/8rICOvnhQkePqhTVBzYBoA",
+  "Name": "Chrome Blokee Game Screen",
+  "Description": "",
+  "Type": "Screen",
+  "TaxonomyType": "Screen",
+  "Created": "2022-03-07T00:05:44.6916969Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.10.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-03-07T00:05:44.6916969Z"
+}

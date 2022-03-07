@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" ContentHash="JVwNAlMi2UihOHgUiHj9jA" Selector="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game'/&gt;" Url="https://blokee.mattle.online/room/8HLxMNWH5zandLvsp" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">0JzspdPmKgk-0rHIke5-RjQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="036c4ae93474f04739d21d7152caa60d.png" xmlns="">0Viz_zRhig0aXBLsq1u0vdA</imageRef>
+</TargetApp>

@@ -1,0 +1,14 @@
+﻿{
+  "Id": "krf7oZUrEUm6xUVQS38_3w",
+  "Reference": "1YbQklEfkky4IapDFZzkZg/krf7oZUrEUm6xUVQS38_3w",
+  "ParentRef": "1YbQklEfkky4IapDFZzkZg/64fxYLQackCFCec5H98uuQ",
+  "Name": "Click row 6 block 2",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2022-03-07T00:10:04.2000665Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.10.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-03-07T00:10:04.2000665Z"
+}
