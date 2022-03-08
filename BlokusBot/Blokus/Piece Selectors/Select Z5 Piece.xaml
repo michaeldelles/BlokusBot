@@ -1,0 +1,121 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Select_Z5_Piece" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Browser" Type="InArgument(ui:UiElement)" />
+  </x:Members>
+  <this:Select_Z5_Piece.in_Browser>
+    <InArgument x:TypeArguments="ui:UiElement" />
+  </this:Select_Z5_Piece.in_Browser>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>958,611</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Select_I5_Piece_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="60">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Select_Z5_Piece" sap:VirtualizedContainerService.HintSize="476,478" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="434,386" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ClickType="Single" DisplayName="Click row 2 block 4" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/8HLxMNWH5zandLvsp" ContentHash="pbDSKooFo06bhBA86Zsdkg" DesignTimeRectangle="256, 268, 66, 68" FriendlyName="'Click row 2 block 4'" Guid="66937d16-b6b5-45e6-aa5e-400eb1dd4267" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAABECAYAAAA1DeP1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATESURBVHhe7ZvZU1RHFIfzxyVEjVvFGC2XilVqxVgmZTRxR6ISFySikSgIwRKCuCBqobiBKFFnkFVWo4iAAwgpUnnz8aR/Xd2kZ+bcmSt1exygH74XnG5Pf7fvvadP9/1o4t93NNv4ePsT2niyg87UDNK5e28kTsRsF7Hs52b67lQnbSnoksxaEbE4EU5EAhHcD9IBM0ZbeIr4dGeI5mc20oK9/pizKxTV3iRjR4g+2xNm23HM3R2Oam/GaAtPEcvFU3VbUTftPfc8KbvP9tLqI61R7U0W//RUPqG5thzr89rlhdDtzRhtEScCV3ZRVqMMvOjWIJXfj1Cpetd6UXx7iDbld0wGrskQg8EVXvtLOx2v6qfz9REqq+X7MNlZ0ktzjRlmxmiLOBF4v24r7qHT1QN0q2mcbjSO0R91ETZgjZeIhUIChB678oquPh6lO83jdPHBMNuHSVqIWJPbRsev9lPVo1Fq6Jyg6vBbOlX9Wv7Ni9zKV3I668A1S/Y3UXb5C7r4cJjq2v6muy3jVCKkcX2YbD7dFfXMMWO0hacITOMrQsaJa/204ddn8u9efHW0VT4HdOAaLQIz6nLDCBWLW23rmW62D5MvDjTRJzv+78eM0RaeIvQ0xcML97kO6n3QInRfOZf7aOWhFva3iTBjtIUToXAiFE6EwolQOBEKJ0LhRCjiRHyZ3Uw/iKQnq/S55BuRTM2LWQ36BSn2pvzOyb6+L+iiz/fFJ17JMGO0RZwIrPoWiOU3Fl4Ay2czy3sf9PJb9zU/Mxy1qvSLGaMt4kSkI2aMtnAiFE6EIkpEkHADmipc/0GTEhF4/a7La5dvDT+szmmV1a0ZJwJVr0MXXk7mE8n44BWqIMEA8LpE5Wp/+V+y0FMdHqOK+mlQqgsSDEBnlpcaRmTZD6Bs9/vtoYRsL+6ZmSJQCb/2ZFSW7JBhfvtbZ0JWHm6ZWc+IabvWCBIMwIkQYABOhAADcCIEGIATIcAAnAgBBuBECDAAJ0KAAWA/9Meibsqt7JPgHMXS7Ka4gSaD6z9orIrAjjY2dFeJTBGgHjqV+ifXf9BYFREUXP9B40QonAjFtBARNFy8KRExb09YLq3XHWv3BR6qGR57Kdgrwb9z7ThWiNd17AOaizclIvDmwNZh/vXXvsAhca9zmziDubWwm23HkSn+X+QzZh9cvFZF4EqsOtIqK04ld4ao6vGoLNLoBMuL2FIdwG4bap84vXdSDPB66C1d8HFC72DFSzmDzL64eK2KwD4nrkhp7Rt5qu5hx4Q8VMYFbMKJwC2BCndRzSDVPB2jUM8/UgbX3iQtROgUu6J+mG42jlHlnyOUc6mPdokMMxFrxb0du0eK0h3Of5bVRqQAyMDM4Nqb4AOVhVnRu/lcvCkRgZO7ZXURefB0zdE2ecskgtso1iJwlSEDMwO3CdfeBM+a2E1sLt6UiNDTdKqLLmCKAAU3BujrE8/Y3yaDi9eJUDgRCidC4UQonAiFE6GwKgKZJdYYhTcHJNnnX9Dyg9FZnl+QWW4p7JrsC0cgsajifpsMLl6rIpDQ4FsvfO8hv/kQyRRO7MUG5gckRfjOTPeF4wZTOaoIuHitikhXuHidCIUTobAmYrrhRCicCIUTIXlH/wEOlo6qJq4NsgAAAABJRU5ErkJggg==" InformativeScreenshot="667af75d81689fb08fc7c6821448b71b.png" Reference="1YbQklEfkky4IapDFZzkZg/Idne4XdcHk-TfmuWtC3OJQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="274, 493, 125, 54" FriendlyName="'Click row 2 block 4'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH0AAAA2CAYAAADqH5aKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUNSURBVHhe7ZxpT+Q4EIbn53N3A4JuQNz33RwCBAiG+76hWa79Byvtt/no0eNZR47bzTTMSklwfXikUVzlpPOWy2Xjybd//v2hhLAQ0QPEK/p9+UWNT0ypQqGoGhsbVV1dnZAB0KpY7NLaoaFPW6gQ/fvOgbdDIXvs7h3FtDXERCc6jMP09LQ6OztTT09P6u3tTcgAz8/P6urqSi0tLUU6lv/6OyY4xESfL/0yHh4e9nYqZIfR0VGt5cxsKSY4xETPt7Zqw/n5eW9HQnbY3t7WWuZy+ZjgEBMdIyA9+DoSssPx8XGkp60xiOhfFBE9QET0ABHRA0REDxARPUBE9ABJVPSjoyPV0dGhmpubo/6hqalJdXd3q83NTb196PMVPk+iog8ODkb9VqOlpUWL7/MXPkeiog8MDOg+i8Wienx81NdeX1/VxcWFmpmZ0SOe9vr6ejU3N1fhL3yO1Iluc39/r9uw4e/B+/v7FTbCx0m16HBychLN+bOzs14b4WOkXnRSPfM6diL6/0NioiOySd39/f1eG1hZWdFzOnb8222nBqDQo9q3a4BcLqeGhobU6elphY8LK4Tz83O1uLion6mhoUFPJ7UUkLe3t9qOACYjce+RkRH18vLitU8DqRCdF+azYQ43o7y9vV2/YLv94OBAtf73d/5qIML4+HjMD25ubtTExITK5/NRULkgnuvHaaHV1VW91CQ4fH5tbW3q7u6uwjctJCY6AhrB+vr6ovU4L3Vvb0+PfiMGIwiBbf/19fXoYCZ22PNjGPn0xag1z+xOCwsLC7FDnTzH2NiYPlxwfX2tCoWCvo6wDw8PkR/7CnaQ0Qf3JQMRRBwj4zrBsLu7G7tnmkhMdF4So8z06wMxOzs79Xk825fizmQAUvrGxkasHRDa9IGY5jrp3hSGTAG+FQGng/DjaJgdjEwh+CEqNu7GEUHBc5GVLi8vY21pIjHReUFmDmbEmFHNC2U0kZJdsQ2kXWzx8c3zYIpE7nF4eBhd59/mvojDqN/Z2YmNaB/2dETQ8HzM5WQGsovPJ60kJrr98j+y44Y4pF38mDvded7A5g42rujlcjkasS6ISfFXLdjYIDLBaUOgdnV16d+RhQDInOj2tPDeUs+kd1d0QBiuTU5O6j5IybaYiEgGsH0MHCOmXqAO4TmwNX7Q29urA8vnmxYyJzpVMSMcP7fQsqFPbJg63CLQB3P22tpaVCvgV8sOIAHESzTFH0xNTXlt00LmRGf9y2jCD2GqVckIRjt21UatD2oE81s/shlkbyK9l4HSQOZEB5ZrJh1TgW9tbUWVNPv1y8vLUd9ARuA6xSP2FIr0wTXTJ/68DDPf0z/rcdoQsKenRwcRo5gUb1fuTDlcN6me1G9vzpilHv5uAFIIskLhfhSHdr/vtf0JmRSdH8+62p6H3wM75mFevlmu/Q57bkZ0CjWfnQtBxX3s56U4NO1uFiiVSlEbNQIBVEvbn5CY6EQxSyZSovuSaoUUzqiyhaQ/lmuMflIu4jECzf/MYXTzMhlBth+BgS/9sTnkVuEEGsFJfwhrBxzBS39MDb60LiNdSBwRPUBE9AAR0QNERA8QET1ARPQAEdEDREQPEBE9QET0ABHRA0REDxARPUBqFl0+Hvh1qPnjgfKZ0K9DzZ8JdT8IzJEhX4dCeuEQKdOz0fG3HwQG99PfnOrgJImQftzjXjV9+tsgH/nPJmj1qY/8C18fET04fqif3tl2+YVJQb0AAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
