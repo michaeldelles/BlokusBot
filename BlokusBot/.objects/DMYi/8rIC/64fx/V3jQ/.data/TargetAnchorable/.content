@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-16"?>
-<TargetAnchorable BrowserURL="https://blokee.mattle.online/room/8HLxMNWH5zandLvsp" ContentHash="H9AGebyIt0-Go4c_WeWOKA" DesignTimeRectangle="118, 345, 51, 70" FriendlyName="'chrome.exe Blokee'" Guid="1d41811c-f403-49fd-a51a-134eb4980cc0" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<TargetAnchorable BrowserURL="https://blokee.mattle.online/room/PkW8Lms9EPLAbSPMs" ContentHash="nvrHpaBZwEmu3BvQILalqQ" DesignTimeRectangle="1303, 396, 40, 60" FriendlyName="'chrome.exe Blokee'" Guid="556561d7-5917-4b70-9e4a-414a0f5af754" Reference="1YbQklEfkky4IapDFZzkZg/V3jQNiqJPUuYg95uKiuQow" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TargetAnchorable.Anchors>
     <scg:List x:TypeArguments="ITarget" Capacity="4">
-      <Target DesignTimeRectangle="274, 492, 122, 55" FriendlyName="'chrome.exe Blokee'" SearchSteps="Image" TargetType="ImageBased">
-        <imageRef attrName="ImageBase64" xmlns="">1IbpjKUOf-keoj6N1wxd5Vw</imageRef>
+      <Target DesignTimeRectangle="1460, 542, 120, 51" FriendlyName="'chrome.exe Blokee'" SearchSteps="Image" TargetType="ImageBased">
+        <imageRef attrName="ImageBase64" xmlns="">1bLy4-cg340yNi--2n4Pqdg</imageRef>
       </Target>
     </scg:List>
   </TargetAnchorable.Anchors>
   <TargetAnchorable.PointOffset>
-    <PointOffset Position="BottomLeft" />
+    <PointOffset Position="TopLeft" X="10" Y="12" />
   </TargetAnchorable.PointOffset>
-  <imageRef attrName="ImageBase64" xmlns="">0Sz4PKXseUk-LW5-patbBHw</imageRef>
-  <imageRef attrName="InformativeScreenshot" originalValue="17b713958179eb013574b5236680f2af.png" xmlns="">0GJ26yILpAEGGrMzPkRpOHA</imageRef>
+  <imageRef attrName="ImageBase64" xmlns="">0X07SLcZdUki_7NX5TcDXIA</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="2061d6bd79bb4400ba3a25998d6a5a24.png" xmlns="">0C0Y_yAsLTUGUk-XqPGgL4Q</imageRef>
 </TargetAnchorable>

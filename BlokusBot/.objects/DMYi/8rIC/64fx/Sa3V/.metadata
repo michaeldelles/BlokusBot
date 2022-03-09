@@ -1,0 +1,14 @@
+﻿{
+  "Id": "Sa3VmQZxVEeHWd9iZcsCOg",
+  "Reference": "1YbQklEfkky4IapDFZzkZg/Sa3VmQZxVEeHWd9iZcsCOg",
+  "ParentRef": "1YbQklEfkky4IapDFZzkZg/64fxYLQackCFCec5H98uuQ",
+  "Name": "Big Check Mark",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2022-03-09T21:54:53.8945404Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.10.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-03-09T21:54:53.8945404Z"
+}
