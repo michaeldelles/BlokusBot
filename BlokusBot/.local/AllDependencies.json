@@ -7564,15 +7564,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jia Min He\\.nuget\\packages\\": {}
+    "C:\\Users\\Michael Delles\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "BlokusBot",
       "projectName": "BlokusBot",
-      "projectPath": "C:\\Users\\Jia Min He\\OneDrive - UiPath\\Documents\\UiPath\\Hackathon 2022\\BlokusBotGit\\BlokusBot\\BlokusBot\\.local",
-      "packagesPath": "C:\\Users\\Jia Min He\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jia Min He\\OneDrive - UiPath\\Documents\\UiPath\\Hackathon 2022\\BlokusBotGit\\BlokusBot\\BlokusBot\\.local"
+      "projectPath": "C:\\Users\\Michael Delles\\Documents\\GitHub\\BlokusBot\\BlokusBot\\.local",
+      "packagesPath": "C:\\Users\\Michael Delles\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Michael Delles\\Documents\\GitHub\\BlokusBot\\BlokusBot\\.local"
     },
     "frameworks": {
       "net461": {
@@ -7598,7 +7598,7 @@
             "version": "[21.10.1, 21.10.1]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Michael Delles\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
