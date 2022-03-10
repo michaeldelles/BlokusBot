@@ -1,15 +1,16 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PlacementCheck" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PlacementCheck" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_CanPlaceBlock" Type="OutArgument(x:Boolean)" />
     <x:Property Name="in_Browser" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="out_PlacementsFound" Type="OutArgument(scg:IEnumerable(ui:UiElement))" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1064,693</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>959,1248</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PlacementCheck_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="36">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -46,10 +47,10 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Activities</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -81,59 +82,94 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
-    </sco:Collection>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PlacementCheck" sap:VirtualizedContainerService.HintSize="476,628" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PlacementCheck" sap:VirtualizedContainerService.HintSize="554,1183" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="434,536" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="512,1091" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,400" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478,954" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Placement Marker'" EnableIfExists="False" EnableIfNotExists="False" Exists="[out_CanPlaceBlock]" sap:VirtualizedContainerService.HintSize="334,176" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
-              <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <ui:FindImageMatches DisplayName="Find Image Matches 'chrome.exe Blokee'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="FindImageMatches_1" Matches="[out_PlacementsFound]">
+              <ui:FindImageMatches.Image>
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+              </ui:FindImageMatches.Image>
+              <ui:FindImageMatches.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="47511a87-1ce1-4cd6-9527-fd4cdbf6d681" Selector="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:FindImageMatches.Target>
+            </ui:FindImageMatches>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,348" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState DisplayName="Check App State 'Placement Marker'" EnableIfExists="False" EnableIfNotExists="False" Exists="[out_CanPlaceBlock]" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/MgDshXbzDywDecuHK" ContentHash="X4yV_c81CkeyyN5Zei1CSw" DesignTimeRectangle="1106, 245, 42, 79" FriendlyName="'Placement Marker'" Guid="13478867-6f22-445c-9a98-b9939769fc2a" ImageBase64="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" InformativeScreenshot="9ad917c6d4a237ee66372b04d29b2f5c.png" Reference="1YbQklEfkky4IapDFZzkZg/kFZGiugbvki_kZvSzXGAOw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset Position="TopLeft" X="22" Y="23" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
                 </Sequence>
-              </uix:NCheckState.IfExists>
-              <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </uix:NCheckState.IfNotExists>
-              <uix:NCheckState.Target>
-                <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/MgDshXbzDywDecuHK" ContentHash="X4yV_c81CkeyyN5Zei1CSw" DesignTimeRectangle="1106, 245, 42, 79" FriendlyName="'Placement Marker'" Guid="13478867-6f22-445c-9a98-b9939769fc2a" ImageBase64="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" InformativeScreenshot="9ad917c6d4a237ee66372b04d29b2f5c.png" Reference="1YbQklEfkky4IapDFZzkZg/kFZGiugbvki_kZvSzXGAOw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased">
-                  <uix:TargetAnchorable.PointOffset>
-                    <uix:PointOffset Position="TopLeft" X="22" Y="23" />
-                  </uix:TargetAnchorable.PointOffset>
-                </uix:TargetAnchorable>
-              </uix:NCheckState.Target>
-            </uix:NCheckState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[out_CanPlaceBlock.ToString]" />
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <Assign sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[out_CanPlaceBlock]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">[out_PlacementsFound.Count&gt;0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[out_CanPlaceBlock.ToString]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Placements found: &quot; + out_PlacementsFound.Count.ToString]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
