@@ -2031,7 +2031,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win10-x64": {
+    ".NETFramework,Version=v4.6.1/win7-x86": {
       "ClosedXML/0.87.1": {
         "type": "package",
         "dependencies": {
@@ -2719,7 +2719,7 @@
           "lib/net45/Microsoft.Web.WebView2.Wpf.dll": {}
         },
         "native": {
-          "runtimes/win-x64/native/_._": {}
+          "runtimes/win-x86/native/_._": {}
         },
         "build": {
           "build/_._": {}
@@ -7564,15 +7564,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Michael Delles\\.nuget\\packages\\": {}
+    "C:\\Users\\eric.armstrong\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "BlokusBot",
       "projectName": "BlokusBot",
-      "projectPath": "C:\\Users\\Michael Delles\\Documents\\GitHub\\BlokusBot\\BlokusBot\\.local",
-      "packagesPath": "C:\\Users\\Michael Delles\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Michael Delles\\Documents\\GitHub\\BlokusBot\\BlokusBot\\.local"
+      "projectPath": "C:\\Users\\eric.armstrong\\Documents\\GitHub\\BlokusBot\\BlokusBot\\.local",
+      "packagesPath": "C:\\Users\\eric.armstrong\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\eric.armstrong\\Documents\\GitHub\\BlokusBot\\BlokusBot\\.local"
     },
     "frameworks": {
       "net461": {
@@ -7598,12 +7598,7 @@
             "version": "[21.10.1, 21.10.1]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Michael Delles\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
-      }
-    },
-    "runtimes": {
-      "win10-x64": {
-        "#import": []
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\runtime.json"
       }
     }
   }
