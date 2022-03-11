@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="985,2421" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1302,3296" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="27">
+    <scg:List x:TypeArguments="x:String" Capacity="54">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -28,6 +28,10 @@
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -57,16 +61,30 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="995,2356" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="1312,3231" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of String)({&quot;V5&quot;, &quot;W&quot;, &quot;P&quot;, &quot;N&quot;, &quot;I5&quot;, &quot;T5&quot;, &quot;U&quot;, &quot;L5&quot;, &quot;Y&quot;, &quot;Z5&quot;, &quot;X&quot;, &quot;F&quot;, &quot;Z4&quot;, &quot;I4&quot;, &quot;L4&quot;, &quot;O&quot;, &quot;T4&quot;, &quot;I3&quot;, &quot;V3&quot;, &quot;2&quot;, &quot;1&quot;})]" Name="pieceList" />
-      <Variable x:TypeArguments="x:Boolean" Default="True" Name="MovesLeft" />
-      <Variable x:TypeArguments="x:Boolean" Name="blockPlaced" />
+      <Variable x:TypeArguments="x:Boolean" Name="timeoutWarning">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Name="blockPlaced">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="ui:UiElement" Name="browser" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -74,14 +92,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke AttachBrowser workflow" sap:VirtualizedContainerService.HintSize="953,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="AttachBrowser.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke AttachBrowser workflow" sap:VirtualizedContainerService.HintSize="1270,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="AttachBrowser.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_Browser">[browser]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InterruptibleDoWhile Condition="[pieceList.Count&gt;0 and blockPlaced]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="953,1960" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1270,2835" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="mainLoop" sap:VirtualizedContainerService.HintSize="917,1795" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="mainLoop" sap:VirtualizedContainerService.HintSize="1234,2670" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="piecePlaced" />
             <Variable x:TypeArguments="x:String" Name="pieceToRemove" />
@@ -91,7 +109,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="reset if a block was placed" sap:VirtualizedContainerService.HintSize="875,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="reset if a block was placed" sap:VirtualizedContainerService.HintSize="1192,60" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[blockPlaced]</OutArgument>
             </Assign.To>
@@ -99,13 +117,13 @@
               <InArgument x:TypeArguments="x:Boolean">False</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Piece" sap:VirtualizedContainerService.HintSize="875,1273" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[pieceList]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Piece" sap:VirtualizedContainerService.HintSize="1192,1404" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[pieceList]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:String" Name="currentPiece" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="For Each Piece" sap:VirtualizedContainerService.HintSize="839,1150" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="For Each Piece" sap:VirtualizedContainerService.HintSize="839,1281" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="canPlaceBlock" />
                     <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="placements" />
@@ -115,6 +133,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Selecting &quot; + currentPiece]" />
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Select Piece workflow" sap:VirtualizedContainerService.HintSize="797,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[&quot;Blokus\Piece Selectors\Select &quot;+currentPiece+&quot; Piece.xaml&quot;]">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Browser">[browser]</InArgument>
@@ -190,15 +209,73 @@
               </ActivityAction>
             </ui:ForEach.Body>
           </ui:ForEach>
-          <If Condition="[blockPlaced]" DisplayName="If Block was Placed remove it from the list" sap:VirtualizedContainerService.HintSize="875,290" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[blockPlaced]" DisplayName="If Block was Placed remove it from the list" sap:VirtualizedContainerService.HintSize="1192,1034" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence sap:VirtualizedContainerService.HintSize="1156,858" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <RemoveFromCollection x:TypeArguments="x:String" Collection="[pieceList]" DisplayName="Remove From Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_2" Item="[pieceToRemove]" />
+                <RemoveFromCollection x:TypeArguments="x:String" Collection="[pieceList]" DisplayName="Remove From Collection" sap:VirtualizedContainerService.HintSize="1114,22" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_2" Item="[pieceToRemove]" />
+                <Pick sap:VirtualizedContainerService.HintSize="1114,704" sap2010:WorkflowViewState.IdRef="Pick_1">
+                  <PickBranch sap:VirtualizedContainerService.HintSize="470,658" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+                    <PickBranch.Trigger>
+                      <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Pass'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="420,400" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="30" Version="V1">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,184" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Our turn again&quot;]" />
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/bmZWPya8wvXJaEAZE" ContentHash="ptaELQ6VakqID4gif1RCFQ" DesignTimeRectangle="267, 544, 116, 46" FriendlyName="'Pass'" Guid="bab343b5-9093-48d4-84f7-bff1ebec819d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHQAAAAuCAYAAAD5jz22AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS0SURBVHhe7Zpnb+MwDIbz77v33nuhA13o3jPdC939Lzo8AmgoqtzrXX0HR+CHB0UjSnb0khRpp9DW1maur6/Nx8eHUsbc3t6a/v5+U9jb2wsaKOXHxcWFKYQGlPJFBY0MFTQyVNDIUEEjQwWNDBU0MlTQyMhU0JubG9PZ2Wnq6upMZWWlqaiosFRVVZnm5mYzOztrHh8fg3OVbMhU0Lm5uUTENKqrq62wr6+vwTWUn5GpoIODg1a0mpoac3x8nHz+8PBglpeXTUNDQyIsti8vLyXzlZ+TqaADAwNBQQUEHBoasukYiFTfRvkZ/1VQIFpbW1utXVNTk7m/vw/aKX/HPxGU1MrrnJANfNdO+XP+u6Bvb2+mt7f3SztS88rKiuFdLUUUtqToxsZGMzEx8e33t3d3d2Zzc9P09fXZdb6b5rl+sVg009PTNoswjyr96uoqaJ8nMhP0+fnZdHR02M3/KpWyUbQ12HV1dX0qjBCAlM14GmwwFbU7D56ensza2ppdVxzBh3vEzp97fn5uxsfHrZOxfmgu9+bPyxuZCcomiaBpm4aHy/lJb7qzs1MyTvTIZvJ3eHjYXF5emvf3d7se/8vmzszMlMzd3d1NHAUQlEyAwESqZIX6+nrbL8s81iWzuNfFIckEOB/rcq+MEbHuNfNIZoISkWwEX5xUySbyOf0mGzMyMpJEDRs0Pz9fMp+Nl42rra01BwcHJeMgbRF2+/v7yec4CkIxxjWWlpY+9blcn3G/YJuamrKfA47op9WzszN7P4wjvDuWRzITlLOQdCWbkwbnoP+zF54e4QSMIxbiuuOCnNG+KKRCWb+np8c6E1HtziUbIDbpWJ5WuVmFsa2trU+ZhSOBNRlfX18vGcsjmQlKGpMoQRSJNlIYQiMGUedvNLDZkvJC56qQJujh4WES/YJcd3R01I6HrkuBRsHkzgPWQmginTbLn5dnMhOUDZZi5k9TkxthX51TaYICUU30yzo+jB0dHZXMAaKZVC4O6INjjI2NpTpZ3vgngvoFy+9wBf1qLmJjExJUIGVyZhNdFEJu5HIWnpycBOcRwRwb29vbtiCSdkXmUpAR0aG5eSIXgnJ2yebx29KQDSwsLFgbRApFWwjOS9YUYSiOQnYhEFcKIv5SIIXs8kQuBKU1kZaDc5jfl4bsVldXE2GoTkM2IRBfIpWzkZ45ZBdCnAGHw/FCNnkiF4ICxYuI1dLSYk5PT5MxUiECuumTlChPgvicM5Iq1C1iaF1Yh0JL5nEeMkZq7u7utkKRTnEi95xkncXFxeQ74XA8fJBx0i/fk7OXa/upnCdd3BfzfUegxeOeuDZFWZbviHMjKF/K3fjvwHU2NjZSCxofv2XhZXzIzgdh/JbFb9MmJyeTMbcdAs5y9/x1awbWDvXcf0tmguLRfAlukBsO2fwOChPmtre3J86BF7vtB40/G4SI8viPZ7s8ZaKXlXkyl8giCkItExHMOUn1zDWwdzeaTMG6odYFgRAxLUKJ7rQIxRnYq1xHqJIPVNDIUEEjQwWNDBU0MlTQyFBBI0MFjQwVNDJU0MhQQSNDBY0MFTQyVNDIUEEjo8C7udCAUn7wXrWQ9qNmpfwoFovmF/N99AycgF+tAAAAAElFTkSuQmCC" InformativeScreenshot="2ebc3d95a39ecea74d93ce5fad6a0955.png" Reference="1YbQklEfkky4IapDFZzkZg/spN-BhKDg0OkUZDrabDKWQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
+                        </uix:NCheckState.Target>
+                      </uix:NCheckState>
+                    </PickBranch.Trigger>
+                  </PickBranch>
+                  <PickBranch sap:VirtualizedContainerService.HintSize="470,658" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+                    <PickBranch.Trigger>
+                      <uix:NCheckState DisplayName="Check App State 'OneMinuteLeft'" EnableIfNotExists="False" Exists="[timeoutWarning]" sap:VirtualizedContainerService.HintSize="420,400" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="30" Version="V1">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,184" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Timeout warning need to end game&quot;]" />
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,83" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/3kJSZ8BWGPEgZhDtH" ContentHash="dN_DNCseQ0WaIRXImKvEWw" DesignTimeRectangle="610, 360, 203, 64" ElementType="Text" FriendlyName="'OneMinuteLeft'" FullSelectorArgument="&lt;webctrl aaname='1 minute left' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;h2&amp;gt;div' parentid='render-target' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='1 minute left' type='' parentid='render-target' tag='DIV' check:text='1 minute left' /&gt;" Guid="6f6f6e1f-02ad-4c63-af76-87dd9e3ce671" ImageBase64="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" InformativeScreenshot="dc03e571238d9f8c630b6cd82434c7a1.png" Reference="1YbQklEfkky4IapDFZzkZg/1tfiXWGxT0KwTFeUwswmcQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="FuzzySelector, Image" />
+                        </uix:NCheckState.Target>
+                      </uix:NCheckState>
+                    </PickBranch.Trigger>
+                  </PickBranch>
+                </Pick>
               </Sequence>
             </If.Then>
             <If.Else>
@@ -213,8 +290,11 @@
           </If>
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
+      <ui:InterruptibleDoWhile.Condition>
+        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="pieceList.Count&gt;0 and blockPlaced and not timeoutWarning" />
+      </ui:InterruptibleDoWhile.Condition>
     </ui:InterruptibleDoWhile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ClickPass workflow" sap:VirtualizedContainerService.HintSize="953,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ClickPass.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ClickPass workflow" sap:VirtualizedContainerService.HintSize="1270,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ClickPass.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Browser">[browser]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>

@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>958,611</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1180,641</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Select_I5_Piece_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="60">
@@ -75,25 +75,25 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Select_I5_Piece" sap:VirtualizedContainerService.HintSize="476,478" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Select_I5_Piece" sap:VirtualizedContainerService.HintSize="476,515" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="434,386" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="434,423" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,287" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ClickType="Single" DisplayName="Click row 5 block 1" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Click row 5 block 1" sap:VirtualizedContainerService.HintSize="334,193" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/h8CPWYJJhchPkrNY3" ContentHash="R2uj-vGJVUezHg_QVImK_g" DesignTimeRectangle="61, 477, 105, 35" FriendlyName="'Click row 5 block 1'" Guid="2e284b29-8778-4f28-8048-da9c590845df" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGkAAAAjCAYAAACXQSQwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQESURBVGhD7ZnZTxRBEIf94xTF+yLed4xnlKBRPAAVVBQQvJFoRFFQLqNRNICiqAgo96Ioh7coSOIbj2X9xjSUuzU7y76wk/TD97TTv56pr7pnt3fKyJ9RssQ2VpIPsJJ8gJXkA6wkH2Al+QAryQdYST7ASvIBqqSpexssk4z04SkpLvkVzU5povmHmiNi1sFGmpb8/4SSmfy5Nk5jDs8bt++VmgPiDzTSvLTI7m1uahPN2O+eNZ3nmcPXaGM1ZvLcWg74V7PIn1OrmfThKQlF2HG+iw4VvY+Izac7XIuBgm/MbVfHaSReDNACfggtC6w60UoHC3vUscEkX3lLy463qDkgIf017S7oVsdqrM9pU3MAmnr7uU51nMbWs52OKJkhfbhKQkHRfbiZ3Mp+Kqn7TkW13+hazdewHLj6LmRCgM5acvQNpd/8QLeefqcbj72zMm/30tJjb0Ky0MULDzfT3stvqYhzbj7xzjp/76PTIMFZaKj5ac20jQt18f4nKubnvF6rZ0iS8gMhWXG8GrAa12S1UnZZH5Xwc+L+tPGStOs9zmKQWdKHqyRMhhV0qqKfKl8OUnXLMJU++6FOInGThAIdK+mlYi5oXftvqnwxqI6XuElaySso5VoPXXn0hR63DdO9xp+ehXWTtOjIvxWEzx80/aKHr4ccUVqGRJOErXwbr6Ds8j4qf/6DalqHqazeu2ZRS1rAnXr4xnun6zFZdcuQUxRICwe2KLwr5IQAhUAhq5p/UX3XiNP92njJfha+mLeh4KxNvKXmc9ffbfhJLwIjVMEFyascUDMMR4s/0OqTrSFZy3kLPMldX8YZdR2/HVFYUVqGZPOZjpAsNHYqNw8ko1613EBXq71rtutSt7NFyizpw1MSlmspdwMEIQwPGg50Jl6cckLgSOKugXSQyt2jjZdge9Re0EYSilHBK/JEaR+tzWpTMwwrWAaKGJxlJKFpIAorClufliHR3pVGEl4L2HUKWdAe3pK18RI0Ir64yCzpw1OSWZI55f3Oi1oGTQRIMlkFVZ+dl6V2XSQYSSYPhQh+yEgxkkxWBr8z0WjatV4YSSYr784Arc12/4IRDunDSrKSxrGSJob0YSVZSeNYSRND+rCSrKRxrKSJIX1YSX6WhLO2LWc6KaWwxyExPxD1zYN1OW1jWTjsXJHpftjpBQ5KcW5n8jbktDvnZtq1XuAMcOeFrrEs/JBFsbVrvcAPbzSQyUq6FKCEjOhqJn24SsLROY53cFwBcB4X7m8DL3CQabLQANF2PsDY2Xw/Ji8+zF8QXuB0BGduJguFDvdXSzi0mkX7nNKHqyTL5CJ9WEkxivRhJcUo0ocqyRJbWEk+wEryAVaSD7CSfICVFPOM0l8twCLmdokdlQAAAABJRU5ErkJggg==" InformativeScreenshot="29868e4e7c88ae7477e8cff625f8d016.png" Reference="1YbQklEfkky4IapDFZzkZg/urPzd_HM5U22tel5SYOBKQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased">
                   <uix:TargetAnchorable.Anchors>
@@ -103,6 +103,16 @@
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="Element 'Big Cancle Button'" Mode="Appears" Retry="True">
+                  <uix:VerifyExecutionOptions.Target>
+                    <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/MgDshXbzDywDecuHK" ContentHash="0Ey1rHs-M0K4XGuob_EeZw" DesignTimeRectangle="1524, 290, 49, 48" FriendlyName="'Big Cancle Button'" Guid="4ba9fe7e-3ee6-4e7d-9e8a-5aa41f0afa34" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADEAAAAwCAYAAAC4wJK5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN1SURBVGhDzdnfSxRRFMDx/WsiIiiJfhBEBBHSQxBBFJQp/bBE+0WU4YtFCKUiohJIlhYS+ZCkoWZliFhmmpkoYqRZ4VsP/Xho7tzxtGfj1O7MuXvnt/vwfZmZe+/5gA7LbsL6vQRZW3oHoqkEjMJV8XcqD8zeRn6utLIizIEWMIrX8QfEmKguAPl1nJ0RUyLMO5fYDVeskg0gRzrYWZ2I7/Mgagr4jXIgs7chc95kmYhvsyCu7GUX51Jm5w0F4sdCTgLMxtP89a5aJ0LUFrIPy5ddIF/3sPeiDgHLy8tKiHzR8h9h3q3gHxrsSG2CxQ0hAKWETPdDQg628Tf72zI2weKC2AEUBxEV+ZAwSjc6bsium+wmWNQQFYDiIAn7BUx2NrAbUFFBdADMNQKTj5rYTaiwIX4BmBKByW71nxUWFiQIAMuKwOTjZnZTKigkKADTIjDZc4vdnPILCQOAuUJgsu82ewjlFRIWAHONwOSTVvYwyi0kTADmCYHJp/fYQykdJGwA5hmByeft7OGUChIFAPOFwOTAfXYIyg6JCoD5RmBuIVECsEAIzA2Eu55eEAAWGIHpINkKCsBCQWB+IGEAsNAQmBdIWAAsVATmBhImAAsVISr3sUPbk6O9YBStZvfwU2gIcXU/O7AqOdYPxtE17F5eCwUhrh1kB9Ul3z4D4/hadk8vBUaIqkPsgJT1ZY69TlkTA2CcCPZ9byCEuH6EHYxCgKjYDfJhPXufsiYHwTiZx57hJt8IUV3EDkQRgJ7XQqaGUl8ap5/hNl8IUXuMHYSyAygtZHoYjNJNjnW6PCPMumJ2AEoFoLSQmREwyrawa1V5Qpj1JezBlA5AaSGzo2Cc2cqu5XKNMBvK2AMptwBKC5kbA3FuG7vWnisEfkzgDqK8Aigt5MMEiPPb2bXpaRFRASgt5OMkiAs72LVUVkTUAEoLWZgCcXEnuxZTIuICUFrI4gyI8l3sWhYRN4DSQj7Pgric71jnRCQ/Iss3fewmWFQASgfB+/Y1CbO13HHRKF4P1vshxwZRAygVhANgqd/sROUe582yzcl39fi/DeICUHaICmB21/1FyPnkZxbmAXxH4z9U3ACKIEpA89nMn4DlWCf7IL4RVgJAqQCi+nBq7gwEJofb2QW5lqg6ANbPTzwCk68esAtzJVFzBKxfi2kzL8Efsbuvqmw8kGwAAAAASUVORK5CYII=" InformativeScreenshot="dbdf04319e97ef855bf0c48a7686e098.png" Reference="1YbQklEfkky4IapDFZzkZg/xHr7YhN4z0qo2OzFULHtMA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
+                  </uix:VerifyExecutionOptions.Target>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
             </uix:NClick>
           </Sequence>
         </ActivityAction>

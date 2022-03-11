@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://blokee.mattle.online/room/3kJSZ8BWGPEgZhDtH" ContentHash="dN_DNCseQ0WaIRXImKvEWw" DesignTimeRectangle="610, 360, 203, 64" ElementType="Text" FriendlyName="'1 minute left'" FullSelectorArgument="&lt;webctrl aaname='1 minute left' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;h2&amp;gt;div' parentid='render-target' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='1 minute left' type='' parentid='render-target' tag='DIV' check:text='1 minute left' /&gt;" Guid="6f6f6e1f-02ad-4c63-af76-87dd9e3ce671" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0Oz9wA02zSku7RkqBTl8QIQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="dc03e571238d9f8c630b6cd82434c7a1.png" xmlns="">0JNmGokj4X02AbGxR3e2XpQ</imageRef>
+</TargetAnchorable>

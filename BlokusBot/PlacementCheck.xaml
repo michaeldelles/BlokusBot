@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>959,1248</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1198,1242</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PlacementCheck_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -50,7 +50,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="72">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -86,22 +86,23 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PlacementCheck" sap:VirtualizedContainerService.HintSize="554,1183" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PlacementCheck" sap:VirtualizedContainerService.HintSize="554,1177" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="512,1091" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="512,1085" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478,954" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478,949" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -109,7 +110,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:FindImageMatches DisplayName="Find Image Matches 'chrome.exe Blokee'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="FindImageMatches_1" Matches="[out_PlacementsFound]">
               <ui:FindImageMatches.Image>
-                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="2" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACkAAABCCAYAAADKU/9vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYASURBVGhD7ZnrU1RlHMf9J8pKpotaOY6Zjk06OqZTpjVpmoKXREXUvKFyqcnhKpe9iOgisKjIbRcWBFlcuagLyEVocVVoFRFGUnNS07GZGqtpmmb6tc+xpXPOfvdc4KyvevF5wZzn+X4/s4d99pznGfP3X0RqufXoPtkuNdHe00fog7zdkJjaHCpyNVDfD7dghhpUSbYO9tIeezaUkiLSpqfTnk6YqQRFkuzTiLHnQAE1hBUnUsdND+yQYszjn36lBw9/Doi51UFzs3doSkajFXb5+PHRL0LJwVsPqKf/DiS6Mo9mHtgaFDaUGKjLMwB7PQN3lUnutGXDcC0JLUimrquDft2KJOOqjsDQYBDh/UTF/bKSWY0nYVgw+fpkgcBBUrLuohuGPAsKz59TJrnJkgkDngVL8vfKS5a0NsHJcoQVJnt/eY5RZnMFHWippMT6Qgq3pMOxchjrK6Ul1xfr4cRAbLZlUq2ng67e+w7ivHGJYu3qlrC5h3YGlqx1ueCkQBic5VAMcbTTATMCkd9UjyUT7EVwAoLdViQjRXF3I8xCRJbux5ILc2LhBDFxtXlQQgnGpnKYiejuuymU7Lh2HQ4UMy97F7luX4cCSllVlAKzxVjam4WSpR1OOFBM6plSWKyGgq46mC1mn8MilNTVK7sNZ/svwmI1eO4Neb/BUTCfz9ayLKFkTJX8MvGR+UtYOhIiy42wg8880y6h5LqSDDiQT0SZHhaOhPi6AtjBx08yvDid3vVekGJHlcl7q9jtGj06Zxns4POeKUooOfvgNnou/hNJlhfFk/v7fk2IqT0MO/hMSF0plAw9ngQH8llg3gMLR8KmCgPs4DNj/yahZGyVmV7bFwYH+5ikWwMLR8LC/BjY4SMkeZn//6S+3kZvGyLgBD5VvedhqRpcd/ropaSlMN/H5Ixw7xJ0UChp6Xj6iPZyynI4yceO6ixYrAZ9kxVm+3gh8VPOJdVhFUpeuNbPXZiiWw8n+ghJ/oycA25YrpSZh7bAbB9vpK/hXKztLUJJ9oCxKDeOuyh3K1aXJsNyJUQr+Fa/k7mF83D3DflLJtqLuYuTMtbCyXziHHlQQorMFhvM4jMhdRXnwF5h4KOao7ubG8AW0rEJS2AIn932bCiDSDtXAjPETDdGcg5HmxsCvz6w91826PW01TBEzIfmaDruqoNijBO9LdzeD5or5tV9oVw3W3ok33Esbc3cwBn7N8OgQMw4EEnh1jRuqy/2VC5ttOloTrb8rxifqfoNXHdmQ5W0JGOLNYsbPN77s4TCggFbNVjn0iPxwx6Skg3uy9yEaYaNMDAYTNat4zrZK7UiSYbpjJ2b9ErKChiqJS/+u3jH1xQKHGQlGWxv5i299OKuBW+mf84tOeJ+RZKM3RU5NC5pGQzXgucTFlPosSTqvnbTr1uxJGOFNwQVaAHbrUCCDFWSjOlG7b9EE9NW0dlLPbCPoVoy3VFG07yick9JSmBfFPa/znaRUZcP1ZLtvf9tHrCCkciO8z7ITtaFD+ec6OyAXT78JH//7U968uQPSYxOG83PiRpmtmkbTTWup4npKykkZRmNTVzsx/i0MJpiCKdZh74QzI2qNsEOMQJJ/h+BGHp4D57L8Jmf+1TifXCNT+tgD+yQQvGJWFLDcViqhg3lGTBbDsWS7ts3YLEaanrbYLYcsidifDaWGeAJlxIWmWPp7v3HMFeMqhMxMWansl0xRFJtCcxEqF6CxHyc9xWUkKPpigfmIUYtqa+rgBJS7KnMhVmBGLVkp2eA5hzcDmUCUfNNF8wKxKglGXu9j3JIBhFRYoQZUmgi2ei+AoUQRa1OmCGFJpKM7eUmKMVn+dFEOFcOzSQrL7RDMT7sVQTNlUMzScbaosBniAsOR9OV/ttwnhyaSrLdBiTISD1lhXOUoKkkgx0BI8nWnj44XgmaS7JdB7Fg7Il8OFYpmkuylyl2WsCXPOXqhmOVorkkg3/Kuxm8R6slKJLOy98OS1raWuAYNQRFkrGrIodWFqTAa2oJmmR1VyflnnPAa2oJmqSW/C+pFUJJon8AGkExQyOyVO8AAAAASUVORK5CYII=" />
               </ui:FindImageMatches.Image>
               <ui:FindImageMatches.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="47511a87-1ce1-4cd6-9527-fd4cdbf6d681" Selector="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;">
@@ -122,15 +123,15 @@
                 </ui:Target>
               </ui:FindImageMatches.Target>
             </ui:FindImageMatches>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,348" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,346" sap2010:WorkflowViewState.IdRef="CommentOut_1">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,268" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'Placement Marker'" EnableIfExists="False" EnableIfNotExists="False" Exists="[out_CanPlaceBlock]" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+                  <uix:NCheckState DisplayName="Check App State 'Placement Marker'" EnableIfExists="False" EnableIfNotExists="False" Exists="[out_CanPlaceBlock]" sap:VirtualizedContainerService.HintSize="334,176" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
@@ -165,11 +166,11 @@
                 <OutArgument x:TypeArguments="x:Boolean">[out_CanPlaceBlock]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:Boolean">[out_PlacementsFound.Count&gt;0]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean">[out_PlacementsFound.Count&gt;1]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[out_CanPlaceBlock.ToString]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Placements found: &quot; + out_PlacementsFound.Count.ToString]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[out_CanPlaceBlock.ToString]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Placements found: &quot; + out_PlacementsFound.Count.ToString]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

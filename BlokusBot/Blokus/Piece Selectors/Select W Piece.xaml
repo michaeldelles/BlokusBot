@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>958,611</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1180,641</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Select_I5_Piece_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="60">
@@ -78,28 +78,27 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Select_W_Piece" sap:VirtualizedContainerService.HintSize="476,478" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Select_W_Piece" sap:VirtualizedContainerService.HintSize="476,515" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="434,386" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="434,423" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,287" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ClickType="Single" DisplayName="Click row 3 block 3" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Click row 3 block 3" sap:VirtualizedContainerService.HintSize="334,193" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/8HLxMNWH5zandLvsp" ContentHash="Wsfd52yAQ0WB-mqIaDDMDg" DesignTimeRectangle="177, 345, 69, 69" FriendlyName="'Click row 3 block 3'" Guid="e48d4348-2fbf-4afa-9dab-dcf8207badf6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAYAAAAcjSspAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASASURBVHhe7Zv7TxRXFMf946otPhqjiFJNbdXUojW1MRUF0ZaCmgoWFLX4qNEqPlDxUSpNkVYRARdY5OEDHyhFpCrG3/zx9H6vmWZ2/c7OZMNMRnJ++CSTyb0nZz57d+fcM7PTJl6/ESUVlUJQKQSVQlApBJVCoFI+KLwxabD4ccdXyoyN7ZJT3CEzA4BxGO+ez+LHHV8p+Vu75NsDg1J0+I4vGJe/tTtlPosfdzylfGg+8dklnfL13n451DQix66MypE//8lIbeNj+XLXrakrZVF5l6w3n/zeS8PSlHguF9vH5dfmzGKmvJQVO3ul5sKwnL8xLm2Dr+RSx7js++2xPedF5ZmHstzMm/JSTvz1VBrankl1wyO7CnDei88rkjL3u5tTX4rz1cAPKe4w7gsOAosfd1QKQaUQVApBpRBUCkGlEFQKwVNK/rZuKfrljpQev2dB4fZRUeoOOAgsftzxlJJT3G6r03nfvwWbw+kb+IVngsWPO55SJgsWP+6oFIJKIYQuZTJhuYaBr5Tc0oQUmDvPmj39vhTs6pPcHxIp8918vLnT9lvYXMYn5g7ons9yDQNfKV9U3ZKai8O2JenHHjNuZXVq580NLnL7qft0LmPd/sGUOx7LNQw8pcw3K2TV7j6pqH9gu2/n2p7J0ea3hZwXrB0J5pgVsuKnXik9ds82rS60j0tdyyiN4QaN8FhJcSpatCETQ6+lOfnCt3ntJWVheZdsO3lfzrSO2dZm68CE1F8bozHcxFbK6atj0njzX9n/+xOb5Dc/D3iC34EFZe/+pjhS6swqQQMccrccvUtjuFmyvVumu+KwXMPAV4rzqWW79wGOFCcWjnGOjc0EyzUMVApBpRBUCkGlEFQKQaUQVArBU8qnP/ZIed2QVJ17ZFm7b0BysmhHAmwZio1UJxaOcY6NzQTLNQw8pWC/sthUlEt39Fiw+52xITspWGF4tcOJheNsVh3LNQw8pcQRlmsYqBSCSiFQKZMJu7i4wPIFkUqZtanDdt8+q0gGItMdCi8q5pUl6DwGSoD0h3ksXxCplDyT2OYjd6WqwdyaA4D+jNcDuNklHbZdyeYxCg/elrlbgr16FomUmWaF4Pa+3iR2+I8ROds6FugV1PTOG0BZkFfWJatr+mxxiffx0Lxi893g0S+edLpjsXxBJFJQ42CFILkryRfS0vtSTl31vxAmBW91r6sdlNrGJ7YjeH1gwoph893ETopT5p/8+6lcTjy3vdod9Q+sqEwsr+xNaUcCFH3YcmCloX8MMVgxbL6b1bv7ZE5JZ0osli+IVAqeBhxvGZXKsw9NZZu0VXMmsCrcFwEcKfj0IQYrBl8lNt8NvsLpq47lCyKV4izlbDeEwC0FYJVg88rG+sHyBSqFoFIIKoWgUggqhaBSCJFIQVleVjckB5tGLDjGufQkgwAphYdu/x8L7c1llUk61g+WL4hECt6sxH+BvjJFFsAxzqUnGQT8cRP7KCcW3p9JL9+DwvIFkUiJKyxfoFIIKoUQupT3EZVCUCkElUJQKe/wRv4DiXreO2bfTn4AAAAASUVORK5CYII=" InformativeScreenshot="31ea9a4568bb601bdb3e6766266200a6.png" Reference="1YbQklEfkky4IapDFZzkZg/i_S40-yStUGhEhO69KWJ-g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased">
                   <uix:TargetAnchorable.Anchors>
@@ -109,6 +108,16 @@
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="Element 'Big Cancle Button'" Mode="Appears" Retry="True">
+                  <uix:VerifyExecutionOptions.Target>
+                    <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/MgDshXbzDywDecuHK" ContentHash="0Ey1rHs-M0K4XGuob_EeZw" DesignTimeRectangle="1524, 290, 49, 48" FriendlyName="'Big Cancle Button'" Guid="4ba9fe7e-3ee6-4e7d-9e8a-5aa41f0afa34" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADEAAAAwCAYAAAC4wJK5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN1SURBVGhDzdnfSxRRFMDx/WsiIiiJfhBEBBHSQxBBFJQp/bBE+0WU4YtFCKUiohJIlhYS+ZCkoWZliFhmmpkoYqRZ4VsP/Xho7tzxtGfj1O7MuXvnt/vwfZmZe+/5gA7LbsL6vQRZW3oHoqkEjMJV8XcqD8zeRn6utLIizIEWMIrX8QfEmKguAPl1nJ0RUyLMO5fYDVeskg0gRzrYWZ2I7/Mgagr4jXIgs7chc95kmYhvsyCu7GUX51Jm5w0F4sdCTgLMxtP89a5aJ0LUFrIPy5ddIF/3sPeiDgHLy8tKiHzR8h9h3q3gHxrsSG2CxQ0hAKWETPdDQg628Tf72zI2weKC2AEUBxEV+ZAwSjc6bsium+wmWNQQFYDiIAn7BUx2NrAbUFFBdADMNQKTj5rYTaiwIX4BmBKByW71nxUWFiQIAMuKwOTjZnZTKigkKADTIjDZc4vdnPILCQOAuUJgsu82ewjlFRIWAHONwOSTVvYwyi0kTADmCYHJp/fYQykdJGwA5hmByeft7OGUChIFAPOFwOTAfXYIyg6JCoD5RmBuIVECsEAIzA2Eu55eEAAWGIHpINkKCsBCQWB+IGEAsNAQmBdIWAAsVATmBhImAAsVISr3sUPbk6O9YBStZvfwU2gIcXU/O7AqOdYPxtE17F5eCwUhrh1kB9Ul3z4D4/hadk8vBUaIqkPsgJT1ZY69TlkTA2CcCPZ9byCEuH6EHYxCgKjYDfJhPXufsiYHwTiZx57hJt8IUV3EDkQRgJ7XQqaGUl8ap5/hNl8IUXuMHYSyAygtZHoYjNJNjnW6PCPMumJ2AEoFoLSQmREwyrawa1V5Qpj1JezBlA5AaSGzo2Cc2cqu5XKNMBvK2AMptwBKC5kbA3FuG7vWnisEfkzgDqK8Aigt5MMEiPPb2bXpaRFRASgt5OMkiAs72LVUVkTUAEoLWZgCcXEnuxZTIuICUFrI4gyI8l3sWhYRN4DSQj7Pgric71jnRCQ/Iss3fewmWFQASgfB+/Y1CbO13HHRKF4P1vshxwZRAygVhANgqd/sROUe582yzcl39fi/DeICUHaICmB21/1FyPnkZxbmAXxH4z9U3ACKIEpA89nMn4DlWCf7IL4RVgJAqQCi+nBq7gwEJofb2QW5lqg6ANbPTzwCk68esAtzJVFzBKxfi2kzL8Efsbuvqmw8kGwAAAAASUVORK5CYII=" InformativeScreenshot="dbdf04319e97ef855bf0c48a7686e098.png" Reference="1YbQklEfkky4IapDFZzkZg/xHr7YhN4z0qo2OzFULHtMA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
+                  </uix:VerifyExecutionOptions.Target>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
             </uix:NClick>
           </Sequence>
         </ActivityAction>
