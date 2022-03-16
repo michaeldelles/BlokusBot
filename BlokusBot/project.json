@@ -15,9 +15,7 @@
   "projectVersion": "1.0.0",
   "runtimeOptions": {
     "autoDispose": false,
-    "netFrameworkLazyLoading": false,
     "isPausable": true,
-    "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
     "excludedLoggedData": [
@@ -26,8 +24,7 @@
     ],
     "executionType": "Workflow",
     "readyForPiP": false,
-    "startsInPiP": false,
-    "mustRestoreAllDependencies": true
+    "startsInPiP": false
   },
   "designOptions": {
     "projectProfile": "Developement",

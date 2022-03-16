@@ -1,13 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PlacementCheck" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PlacementCheck" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_CanPlaceBlock" Type="OutArgument(x:Boolean)" />
     <x:Property Name="in_Browser" Type="InArgument(ui:UiElement)" />
     <x:Property Name="out_PlacementsFound" Type="OutArgument(scg:IEnumerable(ui:UiElement))" />
+    <x:Property Name="in_Block" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1638,2814</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2990,3817.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PlacementCheck_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -50,7 +51,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="37">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -89,28 +90,30 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PlacementCheck" sap:VirtualizedContainerService.HintSize="680.666666666667,2749.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PlacementCheck" sap:VirtualizedContainerService.HintSize="1832,3752.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="638.666666666667,2657.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="1790,3660.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="604.666666666667,2479.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1756,3483.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="timesRotated" />
+              <Variable x:TypeArguments="s:String[]" Name="initialPlacements" />
+              <Variable x:TypeArguments="x:Int32" Name="timesTried" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="562.666666666667,130" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1714,160.666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -129,144 +132,301 @@
                       <InArgument x:TypeArguments="x:Int32">0</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="s:String[]">[initialPlacements]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="s:String[]">[{"X","W"}]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="562.666666666667,1466" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
-              <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1296.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:Int32" Name="timesTried" />
-                  </Sequence.Variables>
+            <If Condition="[{&quot;1&quot;,&quot;O&quot;,&quot;X&quot;}.contains(in_Block)]" sap:VirtualizedContainerService.HintSize="1714,243.333333333333" sap2010:WorkflowViewState.IdRef="If_4">
+              <If.Then>
+                <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_12">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[timesRotated]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">3</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Then>
+            </If>
+            <If Condition="[{&quot;I5&quot;,&quot;I4&quot;,&quot;I3&quot;}.contains(in_Block)]" sap:VirtualizedContainerService.HintSize="1714,243.333333333333" sap2010:WorkflowViewState.IdRef="If_5">
+              <If.Then>
+                <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[timesRotated]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Then>
+            </If>
+            <If Condition="[initialPlacements.Contains(in_Block)]" sap:VirtualizedContainerService.HintSize="1714,1971.33333333333" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="1105.33333333333,1809.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_6">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[timesTried]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">0</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="484,531.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
-                    <ui:InterruptibleWhile.Body>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,362" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:FindImageMatches DisplayName="Find Image Matches 'chrome.exe Blokee'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="FindImageMatches_1" Matches="[out_PlacementsFound]">
-                          <ui:FindImageMatches.Image>
-                            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="1.5" Profile="Basic" TargetImageBase64="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" />
-                          </ui:FindImageMatches.Image>
-                          <ui:FindImageMatches.Target>
-                            <ui:Target Element="{x:Null}" Id="47511a87-1ce1-4cd6-9527-fd4cdbf6d681" Selector="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;">
-                              <ui:Target.ClippingRegion>
-                                <ui:Region Rectangle="164, 112, 647, 612" />
-                              </ui:Target.ClippingRegion>
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
-                            </ui:Target>
-                          </ui:FindImageMatches.Target>
-                        </ui:FindImageMatches>
-                        <Delay Duration="[timespan.FromMilliseconds(500)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                        <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_7">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Int32">[timesTried]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Int32">[timesTried + 1]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                      </Sequence>
-                    </ui:InterruptibleWhile.Body>
-                    <ui:InterruptibleWhile.Condition>
-                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="out_PlacementsFound.count &lt; 1 and timesTried &lt; 3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
-                    </ui:InterruptibleWhile.Condition>
-                  </ui:InterruptibleWhile>
-                  <If Condition="[out_PlacementsFound.count &lt; 1]" sap:VirtualizedContainerService.HintSize="484,531.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[in_Block.Equals(&quot;X&quot;)]" sap:VirtualizedContainerService.HintSize="1063.33333333333,1717.33333333333" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,350" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="412.666666666667,529.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_4">
+                        <ui:InterruptibleWhile.Body>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,361.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:FindImageMatches DisplayName="Find Image Matches 'chrome.exe Blokee'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="FindImageMatches_2" Matches="[out_PlacementsFound]">
+                              <ui:FindImageMatches.Image>
+                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="1.5" Profile="Basic" TargetImageBase64="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" />
+                              </ui:FindImageMatches.Image>
+                              <ui:FindImageMatches.Target>
+                                <ui:Target Element="{x:Null}" Id="47511a87-1ce1-4cd6-9527-fd4cdbf6d681" Selector="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;&lt;webctrl tag='CANVAS' /&gt;">
+                                  <ui:Target.ClippingRegion>
+                                    <ui:Region Rectangle="290, 57, 299, 320" />
+                                  </ui:Target.ClippingRegion>
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:FindImageMatches.Target>
+                            </ui:FindImageMatches>
+                            <Delay Duration="[timespan.FromMilliseconds(500)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                            <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_9">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[timesTried]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[timesTried + 1]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ui:InterruptibleWhile.Body>
+                        <ui:InterruptibleWhile.Condition>
+                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="out_PlacementsFound.count &lt; 1 and timesTried &lt; 3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
+                        </ui:InterruptibleWhile.Condition>
+                      </ui:InterruptibleWhile>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="604.666666666667,1555.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_14">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ClickType="Single" DisplayName="Click 'Click rotate left button'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
-                          <uix:NClick.Target>
-                            <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/7gkenzh8rc44vJjjN" ContentHash="zgl8XKCVvE6HWaHmS5d7Xg" DesignTimeRectangle="199, 245, 66, 62" FriendlyName="'Click rotate left button'" Guid="677ef35c-27d2-42b1-95bb-73ae5a8f0aa5" ImageBase64="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" InformativeScreenshot="05fea1bf2fbfe02b410bffe5d9e9cf04.png" Reference="1YbQklEfkky4IapDFZzkZg/St9yJUzN3E2LTHqDKp4vYw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target DesignTimeRectangle="328, 237, 71, 70" FriendlyName="'Click rotate left button'" ImageBase64="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" SearchSteps="Image" TargetType="ImageBased" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                            </uix:TargetAnchorable>
-                          </uix:NClick.Target>
-                        </uix:NClick>
-                        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Int32">[timesRotated]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Int32">[timesRotated + 1]</InArgument>
-                          </Assign.Value>
-                        </Assign>
+                        <ui:InterruptibleWhile Condition="[timesRotated&lt;=3 and out_PlacementsFound.count &lt; 1]" DisplayName="While" sap:VirtualizedContainerService.HintSize="562.666666666667,1460.66666666667" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_7">
+                          <ui:InterruptibleWhile.Body>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1292.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="484,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[timesTried]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:InterruptibleWhile Condition="[out_PlacementsFound.count &lt; 1 and timesTried &lt; 3]" DisplayName="While" sap:VirtualizedContainerService.HintSize="484,529.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_6">
+                                <ui:InterruptibleWhile.Body>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,361.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:FindImageMatches DisplayName="Find Image Matches 'chrome.exe Blokee'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="FindImageMatches_4" Matches="[out_PlacementsFound]">
+                                      <ui:FindImageMatches.Image>
+                                        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="1.5" Profile="Basic" TargetImageBase64="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" />
+                                      </ui:FindImageMatches.Image>
+                                      <ui:FindImageMatches.Target>
+                                        <ui:Target Element="{x:Null}" Id="47511a87-1ce1-4cd6-9527-fd4cdbf6d681" Selector="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;&lt;webctrl tag='CANVAS' /&gt;">
+                                          <ui:Target.ClippingRegion>
+                                            <ui:Region Rectangle="332, 101, 212, 236" />
+                                          </ui:Target.ClippingRegion>
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:FindImageMatches.Target>
+                                    </ui:FindImageMatches>
+                                    <Delay Duration="[timespan.FromMilliseconds(500)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                                    <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">[timesTried]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">[timesTried + 1]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </ui:InterruptibleWhile.Body>
+                              </ui:InterruptibleWhile>
+                              <If Condition="[out_PlacementsFound.count &lt; 1]" sap:VirtualizedContainerService.HintSize="484,530" sap2010:WorkflowViewState.IdRef="If_7">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,350.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'Click rotate left button'" sap:VirtualizedContainerService.HintSize="334,157.333333333333" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/7gkenzh8rc44vJjjN" ContentHash="zgl8XKCVvE6HWaHmS5d7Xg" DesignTimeRectangle="199, 245, 66, 62" FriendlyName="'Click rotate left button'" Guid="677ef35c-27d2-42b1-95bb-73ae5a8f0aa5" ImageBase64="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" InformativeScreenshot="05fea1bf2fbfe02b410bffe5d9e9cf04.png" Reference="1YbQklEfkky4IapDFZzkZg/St9yJUzN3E2LTHqDKp4vYw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target DesignTimeRectangle="328, 237, 71, 70" FriendlyName="'Click rotate left button'" ImageBase64="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" SearchSteps="Image" TargetType="ImageBased" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">[timesRotated]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">[timesRotated + 1]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                            </Sequence>
+                          </ui:InterruptibleWhile.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InterruptibleWhile>
                       </Sequence>
-                    </If.Then>
+                    </If.Else>
                   </If>
                 </Sequence>
-              </ui:InterruptibleWhile.Body>
-              <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="timesRotated&lt;3 and out_PlacementsFound.count &lt; 1" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
-              </ui:InterruptibleWhile.Condition>
-            </ui:InterruptibleWhile>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="562,346" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,268" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              </If.Then>
+              <If.Else>
+                <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="562.666666666667,1460.66666666667" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+                  <ui:InterruptibleWhile.Body>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1292.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="484,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[timesTried]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="484,529.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
+                        <ui:InterruptibleWhile.Body>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,361.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:FindImageMatches DisplayName="Find Image Matches 'chrome.exe Blokee'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="FindImageMatches_1" Matches="[out_PlacementsFound]">
+                              <ui:FindImageMatches.Image>
+                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="1.5" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACkAAABCCAYAAADKU/9vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYASURBVGhD7ZnrU1RlHMf9J8pKpotaOY6Zjk06OqZTpjVpmoKXREXUvKFyqcnhKpe9iOgisKjIbRcWBFlcuagLyEVocVVoFRFGUnNS07GZGqtpmmb6tc+xpXPOfvdc4KyvevF5wZzn+X4/s4d99pznGfP3X0RqufXoPtkuNdHe00fog7zdkJjaHCpyNVDfD7dghhpUSbYO9tIeezaUkiLSpqfTnk6YqQRFkuzTiLHnQAE1hBUnUsdND+yQYszjn36lBw9/Doi51UFzs3doSkajFXb5+PHRL0LJwVsPqKf/DiS6Mo9mHtgaFDaUGKjLMwB7PQN3lUnutGXDcC0JLUimrquDft2KJOOqjsDQYBDh/UTF/bKSWY0nYVgw+fpkgcBBUrLuohuGPAsKz59TJrnJkgkDngVL8vfKS5a0NsHJcoQVJnt/eY5RZnMFHWippMT6Qgq3pMOxchjrK6Ul1xfr4cRAbLZlUq2ng67e+w7ivHGJYu3qlrC5h3YGlqx1ueCkQBic5VAMcbTTATMCkd9UjyUT7EVwAoLdViQjRXF3I8xCRJbux5ILc2LhBDFxtXlQQgnGpnKYiejuuymU7Lh2HQ4UMy97F7luX4cCSllVlAKzxVjam4WSpR1OOFBM6plSWKyGgq46mC1mn8MilNTVK7sNZ/svwmI1eO4Neb/BUTCfz9ayLKFkTJX8MvGR+UtYOhIiy42wg8880y6h5LqSDDiQT0SZHhaOhPi6AtjBx08yvDid3vVekGJHlcl7q9jtGj06Zxns4POeKUooOfvgNnou/hNJlhfFk/v7fk2IqT0MO/hMSF0plAw9ngQH8llg3gMLR8KmCgPs4DNj/yahZGyVmV7bFwYH+5ikWwMLR8LC/BjY4SMkeZn//6S+3kZvGyLgBD5VvedhqRpcd/ropaSlMN/H5Ixw7xJ0UChp6Xj6iPZyynI4yceO6ixYrAZ9kxVm+3gh8VPOJdVhFUpeuNbPXZiiWw8n+ghJ/oycA25YrpSZh7bAbB9vpK/hXKztLUJJ9oCxKDeOuyh3K1aXJsNyJUQr+Fa/k7mF83D3DflLJtqLuYuTMtbCyXziHHlQQorMFhvM4jMhdRXnwF5h4KOao7ubG8AW0rEJS2AIn932bCiDSDtXAjPETDdGcg5HmxsCvz6w91826PW01TBEzIfmaDruqoNijBO9LdzeD5or5tV9oVw3W3ok33Esbc3cwBn7N8OgQMw4EEnh1jRuqy/2VC5ttOloTrb8rxifqfoNXHdmQ5W0JGOLNYsbPN77s4TCggFbNVjn0iPxwx6Skg3uy9yEaYaNMDAYTNat4zrZK7UiSYbpjJ2b9ErKChiqJS/+u3jH1xQKHGQlGWxv5i299OKuBW+mf84tOeJ+RZKM3RU5NC5pGQzXgucTFlPosSTqvnbTr1uxJGOFNwQVaAHbrUCCDFWSjOlG7b9EE9NW0dlLPbCPoVoy3VFG07yick9JSmBfFPa/znaRUZcP1ZLtvf9tHrCCkciO8z7ITtaFD+ec6OyAXT78JH//7U968uQPSYxOG83PiRpmtmkbTTWup4npKykkZRmNTVzsx/i0MJpiCKdZh74QzI2qNsEOMQJJ/h+BGHp4D57L8Jmf+1TifXCNT+tgD+yQQvGJWFLDcViqhg3lGTBbDsWS7ts3YLEaanrbYLYcsidifDaWGeAJlxIWmWPp7v3HMFeMqhMxMWansl0xRFJtCcxEqF6CxHyc9xWUkKPpigfmIUYtqa+rgBJS7KnMhVmBGLVkp2eA5hzcDmUCUfNNF8wKxKglGXu9j3JIBhFRYoQZUmgi2ei+AoUQRa1OmCGFJpKM7eUmKMVn+dFEOFcOzSQrL7RDMT7sVQTNlUMzScbaosBniAsOR9OV/ttwnhyaSrLdBiTISD1lhXOUoKkkgx0BI8nWnj44XgmaS7JdB7Fg7Il8OFYpmkuylyl2WsCXPOXqhmOVorkkg3/Kuxm8R6slKJLOy98OS1raWuAYNQRFkrGrIodWFqTAa2oJmmR1VyflnnPAa2oJmqSW/C+pFUJJon8AGkExQyOyVO8AAAAASUVORK5CYII=" />
+                              </ui:FindImageMatches.Image>
+                              <ui:FindImageMatches.Target>
+                                <ui:Target Element="{x:Null}" Id="47511a87-1ce1-4cd6-9527-fd4cdbf6d681" Selector="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;">
+                                  <ui:Target.ClippingRegion>
+                                    <ui:Region Rectangle="164, 112, 647, 612" />
+                                  </ui:Target.ClippingRegion>
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:FindImageMatches.Target>
+                            </ui:FindImageMatches>
+                            <Delay Duration="[timespan.FromMilliseconds(500)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                            <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[timesTried]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[timesTried + 1]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ui:InterruptibleWhile.Body>
+                        <ui:InterruptibleWhile.Condition>
+                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="out_PlacementsFound.count &lt; 1 and timesTried &lt; 3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                        </ui:InterruptibleWhile.Condition>
+                      </ui:InterruptibleWhile>
+                      <If Condition="[out_PlacementsFound.count &lt; 1]" sap:VirtualizedContainerService.HintSize="484,530" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,350.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ClickType="Single" DisplayName="Click 'Click rotate left button'" sap:VirtualizedContainerService.HintSize="334,157.333333333333" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/7gkenzh8rc44vJjjN" ContentHash="zgl8XKCVvE6HWaHmS5d7Xg" DesignTimeRectangle="199, 245, 66, 62" FriendlyName="'Click rotate left button'" Guid="677ef35c-27d2-42b1-95bb-73ae5a8f0aa5" ImageBase64="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" InformativeScreenshot="05fea1bf2fbfe02b410bffe5d9e9cf04.png" Reference="1YbQklEfkky4IapDFZzkZg/St9yJUzN3E2LTHqDKp4vYw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="328, 237, 71, 70" FriendlyName="'Click rotate left button'" ImageBase64="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" SearchSteps="Image" TargetType="ImageBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[timesRotated]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[timesRotated + 1]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                      </If>
+                    </Sequence>
+                  </ui:InterruptibleWhile.Body>
+                  <ui:InterruptibleWhile.Condition>
+                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="timesRotated&lt;=3 and out_PlacementsFound.count &lt; 1" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                  </ui:InterruptibleWhile.Condition>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'Placement Marker'" EnableIfExists="False" EnableIfNotExists="False" Exists="[out_CanPlaceBlock]" sap:VirtualizedContainerService.HintSize="334,176" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f93d546c-fa6e-4c9b-8fca-5addacf1be53" Version="V1">
-                    <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Sequence>
-                    </uix:NCheckState.IfExists>
-                    <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Sequence>
-                    </uix:NCheckState.IfNotExists>
-                    <uix:NCheckState.Target>
-                      <uix:TargetAnchorable BrowserURL="https://blokee.mattle.online/room/MgDshXbzDywDecuHK" ContentHash="X4yV_c81CkeyyN5Zei1CSw" DesignTimeRectangle="1106, 245, 42, 79" FriendlyName="'Placement Marker'" Guid="13478867-6f22-445c-9a98-b9939769fc2a" ImageBase64="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" InformativeScreenshot="9ad917c6d4a237ee66372b04d29b2f5c.png" Reference="1YbQklEfkky4IapDFZzkZg/kFZGiugbvki_kZvSzXGAOw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Blokee - Inspired by Blokus - Online Board Game' /&gt;" SearchSteps="Image" TargetType="ImageBased">
-                        <uix:TargetAnchorable.PointOffset>
-                          <uix:PointOffset Position="TopLeft" X="22" Y="23" />
-                        </uix:TargetAnchorable.PointOffset>
-                      </uix:TargetAnchorable>
-                    </uix:NCheckState.Target>
-                  </uix:NCheckState>
-                </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
-            <Assign sap:VirtualizedContainerService.HintSize="562,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                </ui:InterruptibleWhile>
+              </If.Else>
+            </If>
+            <Assign sap:VirtualizedContainerService.HintSize="1714,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Boolean">[out_CanPlaceBlock]</OutArgument>
               </Assign.To>
@@ -274,8 +434,20 @@
                 <InArgument x:TypeArguments="x:Boolean">[out_PlacementsFound.Count&gt;=1]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[out_CanPlaceBlock.ToString]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Placements found: &quot; + out_PlacementsFound.Count.ToString]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1714,93.3333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[out_CanPlaceBlock.ToString]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1714,93.3333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Placements found: &quot; + out_PlacementsFound.Count.ToString]" />
+            <If Condition="[initialPlacements.contains(&quot;1&quot;)]" sap:VirtualizedContainerService.HintSize="1714,243.333333333333" sap2010:WorkflowViewState.IdRef="If_6">
+              <If.Then>
+                <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_14">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[timesRotated]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">3</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Then>
+            </If>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
